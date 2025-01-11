@@ -8,7 +8,7 @@ function App() {
   const [feedback, setFeedback] = useState("")
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/getFeedback')
+    axios.get('https://feedbackend-five.vercel.app')
     .then((res)=>{
       setData(res.data)
       }).catch(() => {
@@ -17,7 +17,7 @@ function App() {
   })
  
   const AddData = () => {
-   axios.post('http://localhost:3000/saveFeedback',{name,feedback})
+   axios.post('https://feedbackend-five.vercel.app',{name,feedback})
       .then(() => {
         setData([...data, {name,feedback}])
         setName("")
